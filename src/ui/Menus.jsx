@@ -109,8 +109,6 @@ function List({ children, id }) {
 
   if (openId !== id) return null;
 
-  console.log(position);
-
   return createPortal(
     <StyledList position={position} ref={ref}>
       {children}
