@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { useCurrentuser } from "../features/authentication/useCurrentUser";
+import { useCurrentUser } from "../features/authentication/useCurrentUser";
 import Spinner from "./Spinner";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const FullPage = styled.div`
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
-  const { isAuthenticated, isLoading } = useCurrentuser();
+  const { isAuthenticated, isLoading } = useCurrentUser();
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) navigate("/login");
@@ -27,7 +27,7 @@ function ProtectedRoute({ children }) {
       </FullPage>
     );
 
-  return children;
+  if (isAuthenticated) return children;
 }
 
 export default ProtectedRoute;

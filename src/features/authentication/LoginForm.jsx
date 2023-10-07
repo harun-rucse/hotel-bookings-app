@@ -5,7 +5,7 @@ import Input from "../../ui/Input";
 import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
-import { useCurrentuser } from "./useCurrentUser";
+import { useCurrentUser } from "./useCurrentUser";
 import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
@@ -13,7 +13,7 @@ function LoginForm() {
   const [email, setEmail] = useState("harun@example.com");
   const [password, setPassword] = useState("pass1234");
   const { isLoging, login } = useLogin();
-  const { isAuthenticated, isLoading } = useCurrentuser();
+  const { isAuthenticated, isLoading } = useCurrentUser();
 
   // Redirect to dashboard if user is authenticate
   useEffect(() => {
