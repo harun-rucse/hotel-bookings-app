@@ -13,10 +13,10 @@ function Cabins() {
       </Row>
 
       <Row>
-        <CabinTable />
-        <div>
+        <div style={{ textAlign: "right" }}>
           <AddCabin />
         </div>
+        <CabinTable />
       </Row>
     </>
   );
